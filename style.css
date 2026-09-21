@@ -1,112 +1,224 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #0f172a;
-  color: #f4f4f4;
+/* =======================================================
+   Nikoleta Koleva - Professional Portfolio Theme
+   ======================================================= */
+
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+  --text-main: #cbd5e1;
+  --text-heading: #f8fafc;
 }
 
-/* Ново: Стил за горната навигация, която използваме в HTML страниците */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
 .main-nav {
-  background: #0f172a;
-  padding: 1rem 2rem;
-  text-align: center;
-  border-bottom: 1px solid #1e293b;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 20px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  flex-wrap: wrap;
 }
 
 .main-nav a {
-  color: #22d3ee;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
+  color: var(--text-main);
+  font-weight: 600;
   font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .main-nav a:hover {
-  text-decoration: underline;
+  color: var(--accent);
 }
 
 .hero {
   text-align: center;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  padding: 3rem 2rem;
+  padding: 80px 20px 60px;
+  background: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 70%);
 }
 
 .profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #fff;
-  margin-bottom: 1rem;
+  border: 3px solid var(--accent);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.2);
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
 }
 
-h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.3rem;
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+.hero h1 {
+  color: var(--text-heading);
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  font-weight: 400;
 }
 
 .btn {
-  display: inline-block; /* Добавено, за да работи правилно падингът на <a> таговете */
-  background: #22d3ee;
-  color: #000;
-  padding: 0.7rem 1.4rem;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
-  margin: 5px; /* Добавено разстояние между бутоните, ако са на един ред */
+  display: inline-block;
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.25);
+  transition: all 0.3s ease;
+  margin: 5px;
+  border: none;
 }
 
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  background: #1e293b;
-  border-radius: 12px;
-  margin-top: -2rem;
+.btn:hover {
+  background-color: var(--accent-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+}
+
+.project-buttons .btn {
+  margin-bottom: 15px;
+}
+
+.container,
+.cv-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section {
+  background: var(--bg-card);
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 h2 {
-  color: #22d3ee;
+  color: var(--text-heading);
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 25px;
 }
 
-a {
-  color: #22d3ee;
+h3 {
+  color: var(--text-heading);
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
-@media screen and (max-width: 600px) {
+.page-title {
+  text-align: center;
+  color: var(--text-heading);
+  margin: 40px 0 20px;
+  font-size: 2.2rem;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+li {
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+small {
+  color: #64748b;
+  display: block;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .main-nav {
+    gap: 15px;
+    padding: 12px 10px;
+  }
+  
+  .main-nav a {
+    font-size: 0.85rem;
+  }
+  
+  section {
+    padding: 25px;
+  }
+  
+  ul {
+    grid-template-columns: 1fr;
+  }
+  
   .btn {
     display: block;
     width: 100%;
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
+    text-align: center;
     margin: 10px 0;
-    box-sizing: border-box;
   }
-
-  .main-nav a {
+  
+  .hero .btn {
     display: block;
-    margin: 8px 0;
-  }
-
-  .container {
-    padding: 1rem;
-    margin-top: 1rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  img,
-  .profile-pic {
-    max-width: 100%;
-    height: auto;
+    margin: 15px auto;
+    max-width: 300px;
   }
 }
